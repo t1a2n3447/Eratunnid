@@ -137,7 +137,7 @@ body {
 @media (max-width: 768px) and (orientation: portrait) {
     .center-image-container {
         position: relative;
-        display: block;
+        display: block; /* Kuvab pildid üksteise peal */
         width: 100%;
         height: auto;
     }
