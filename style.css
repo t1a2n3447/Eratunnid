@@ -6,16 +6,17 @@
 
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     background-color: #90EE90;
     padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
 }
 
 .container {
     text-align: center;
+    width: 100%;
     max-width: 80%;
     max-height: 80vh;
     display: flex;
@@ -28,17 +29,17 @@ body {
 .title {
     font-size: 5.1em;
     font-weight: bold;
-    margin-bottom: 20px;
     width: calc(50vh * 3);
     text-align: center;
     color: #333;
-    z-index: 10; /* Kirje on kõige ees */
+    z-index: 10; /* Tagab kirje nähtavuse */
+    position: relative;
 }
 
 /* Pildid arvutivaates */
 .center-image-container {
     position: relative;
-    width: calc(50vh * 3); /* Sama laius nagu algses koodis */
+    width: calc(50vh * 3);
     height: 50vh;
     display: flex;
     justify-content: space-between;
@@ -47,7 +48,7 @@ body {
 
 .image-wrapper {
     position: relative;
-    width: calc((50vh * 3) / 3 - 10px); /* Piltide laius, mis on jagatud kolme peale */
+    width: calc((50vh * 3) / 3 - 10px);
     height: 50vh;
     margin-right: 5px;
 }
@@ -138,6 +139,8 @@ body {
         margin-top: 10px;
         text-align: center;
         white-space: nowrap;
+        position: relative;
+        z-index: 10;
     }
 
     .center-image-container {
@@ -176,8 +179,8 @@ body {
         margin-top: 10px;
         text-align: center;
         white-space: nowrap;
-        display: block; /* Tagame, et kirje kuvatakse */
-        z-index: 10; /* Tagame, et kirje on kõige peal */
+        display: block; /* Tagab, et kirje kuvatakse */
+        z-index: 100; /* Kirje on kõige ees */
         position: relative;
     }
 
@@ -186,6 +189,7 @@ body {
         justify-content: space-between;
         width: calc(100% - 20px); /* Peaaegu kogu ekraani laius */
         height: auto;
+        position: relative;
     }
 
     .image-wrapper {
@@ -207,6 +211,7 @@ body {
         display: block; /* Kuvab kõik pildid horisontaalvaates */
     }
 }
+
 
 
 
