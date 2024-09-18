@@ -11,7 +11,7 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #90EE90; /* Heleroheline taustavärv */
-    padding: 40px; /* Lisab ruumi keha ümber */
+    padding: 40px;
 }
 
 .container {
@@ -126,21 +126,21 @@ body {
 /* Muutused ainult mobiili vertikaalvaates */
 @media (max-width: 768px) and (orientation: portrait) {
     body {
-        padding: 0; /* Eemaldame paddingu mobiilivaates */
-        justify-content: flex-start; /* Asetame elemendid üles */
+        padding: 0;
+        justify-content: flex-start;
         height: auto;
     }
 
     .title {
-        font-size: 7vw; /* Väiksem font mobiilivaates */
-        width: calc(100% - 20px); /* Katab peaaegu kogu laiuse */
-        margin-top: 10px; /* Lisame vahe ekraani ülaäärega */
+        font-size: 7vw;
+        width: calc(100% - 20px); /* Katab peaaegu kogu ekraani laiuse */
+        margin-top: 10px;
         text-align: center;
         white-space: nowrap;
     }
 
     .center-image-container {
-        display: block; /* Kuvame pildid üksteise peal */
+        display: block;
         width: 100%;
         height: auto;
     }
@@ -157,15 +157,21 @@ body {
     }
 
     .image-wrapper:not(:first-child) {
-        display: none; /* Peidame kõik peale esimese pildi */
+        display: none;
     }
 }
 
 /* Muutused ainult mobiili horisontaalvaates */
 @media (max-width: 768px) and (orientation: landscape) {
+    body {
+        padding: 0;
+        justify-content: flex-start;
+        height: auto;
+    }
+
     .title {
         font-size: 6vw;
-        width: calc(100% - 20px); /* Katab peaaegu kogu laiuse */
+        width: calc(100% - 20px); /* Katab peaaegu kogu ekraani laiuse */
         margin-top: 10px;
         text-align: center;
     }
@@ -173,12 +179,12 @@ body {
     .center-image-container {
         display: flex;
         justify-content: space-between;
-        width: calc(100% - 20px); /* Väike vahe servades */
+        width: calc(100% - 20px); /* Peaaegu kogu ekraani laius */
         height: auto;
     }
 
     .image-wrapper {
-        width: calc(33.33% - 10px); /* Jagame kolmeks osaks */
+        width: calc(33.33% - 10px);
         height: auto;
         margin-right: 5px;
     }
@@ -193,9 +199,10 @@ body {
     }
 
     .image-wrapper:not(:first-child) {
-        display: block; /* Kuvame kõik pildid horisontaalvaates */
+        display: block; /* Kuvab kõik pildid horisontaalvaates */
     }
 }
+
 
 
 
