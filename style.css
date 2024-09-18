@@ -16,8 +16,7 @@ body {
 
 .container {
     text-align: center;
-    max-width: 80%;
-    max-height: 80vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -29,23 +28,23 @@ body {
     font-size: 5.1em;
     font-weight: bold;
     margin-bottom: 20px;
-    width: 100%;
     text-align: center;
     color: #333;
+    width: 100%;
 }
 
 .center-image-container {
     position: relative;
     width: 100%;
     display: flex;
-    flex-wrap: wrap; /* Tagab, et pildid lähevad väiksematel ekraanidel alla */
-    justify-content: space-between;
+    flex-wrap: wrap; /* Tagab, et pildid liiguvad uuele reale väiksematel ekraanidel */
+    justify-content: space-around;
     margin-bottom: 40px;
 }
 
 .image-wrapper {
     position: relative;
-    width: 30%; /* Pildid jagunevad kolme peale suurematel ekraanidel */
+    width: 30%; /* Piltide laius on 30% suurematel ekraanidel */
     height: auto;
     margin-bottom: 20px;
 }
@@ -53,7 +52,7 @@ body {
 .small-image {
     width: 100%;
     height: auto;
-    max-height: 300px; /* Maksimaalne kõrgus piltidele */
+    max-height: 400px; /* Maksimaalne kõrgus */
 }
 
 .center-image {
@@ -101,55 +100,63 @@ body {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    flex-wrap: wrap; /* Tagab, et ribad liiguvad uuele reale väiksematel ekraanidel */
 }
 
 .stripe {
     flex: 1;
     padding: 10px 0;
     text-align: center;
-    font-size: calc(0.8 * 50px);
+    font-size: 2em;
     background-color: rgba(255, 255, 255, 0.8); 
     border-radius: 50px;
-    
     background-image: 
         linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
         linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
     background-size: 20px 20px;
-    
     color: #333;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     margin: 0 5px;
-    max-width: calc(100% / 4 - 10px);
+    max-width: calc(100% / 4 - 10px); /* Jagab ribad võrdselt */
 }
 
 /* Kohandused mobiili ja väikeste seadmete jaoks */
+@media (max-width: 1024px) {
+    .title {
+        font-size: 4em;
+    }
+
+    .image-wrapper {
+        width: 45%; /* Pildid võtavad rohkem ruumi keskmistel ekraanidel */
+    }
+
+    .stripe {
+        font-size: 1.8em;
+        max-width: 100%;
+    }
+}
+
 @media (max-width: 768px) {
     .container {
-        max-width: 100%;
         padding: 20px;
     }
 
     .title {
         font-size: 3em;
-        width: auto;
     }
 
     .center-image-container {
-        flex-direction: column;
+        flex-direction: column; /* Pildid lähevad alla üksteise järel väiksematel ekraanidel */
     }
 
     .image-wrapper {
-        width: 90%; /* Pildid võtavad rohkem ruumi väiksematel ekraanidel */
-        margin-bottom: 20px;
-    }
-
-    .stripes {
-        flex-direction: column;
+        width: 80%; /* Pildid võtavad rohkem ruumi väiksematel ekraanidel */
     }
 
     .stripe {
-        max-width: 100%;
+        font-size: 1.5em;
         margin: 10px 0;
+        max-width: 100%;
     }
 }
 
@@ -158,19 +165,13 @@ body {
         font-size: 2em;
     }
 
-    .hover-overlay {
-        font-size: 1.5em;
-        padding-left: 10px;
-        padding-right: 10px;
+    .image-wrapper {
+        width: 100%; /* Pildid võtavad kogu ekraani laiuse väga väikestes seadmetes */
     }
 
     .stripe {
-        font-size: 1em;
-    }
-
-    .image-wrapper {
-        width: 100%; /* Pildid võtavad kogu ekraani laiuse väiksemates seadmetes */
-        height: auto;
+        font-size: 1.2em;
     }
 }
+
 
