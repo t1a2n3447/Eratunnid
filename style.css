@@ -10,7 +10,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #90EE90; /* Heleroheline taustavärv */
+    background-color: #90EE90;
     padding: 40px;
 }
 
@@ -29,34 +29,31 @@ body {
     font-size: 5.1em;
     font-weight: bold;
     margin-bottom: 20px;
-    width: calc(50vh * 3);
+    width: 100%;
     text-align: center;
     color: #333;
 }
 
 .center-image-container {
     position: relative;
-    width: calc(50vh * 3); 
-    height: 50vh;
+    width: 100%;
     display: flex;
+    flex-wrap: wrap; /* Tagab, et pildid lähevad väiksematel ekraanidel alla */
     justify-content: space-between;
     margin-bottom: 40px;
 }
 
 .image-wrapper {
     position: relative;
-    width: calc((50vh * 3) / 3 - 10px); 
-    height: 50vh;
-    margin-right: 5px;
-}
-
-.image-wrapper:last-child {
-    margin-right: 0;
+    width: 30%; /* Pildid jagunevad kolme peale suurematel ekraanidel */
+    height: auto;
+    margin-bottom: 20px;
 }
 
 .small-image {
     width: 100%;
-    height: 100%;
+    height: auto;
+    max-height: 300px; /* Maksimaalne kõrgus piltidele */
 }
 
 .center-image {
@@ -70,10 +67,6 @@ body {
     width: 100%;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.8); 
-    background-image: 
-        linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
-        linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
-    background-size: 20px 20px;
     display: none; 
     justify-content: center;
     align-items: center;
@@ -107,7 +100,7 @@ body {
 .stripes {
     display: flex;
     justify-content: space-between;
-    width: calc(50vh * 3);
+    width: 100%;
 }
 
 .stripe {
@@ -143,11 +136,10 @@ body {
 
     .center-image-container {
         flex-direction: column;
-        height: auto;
     }
 
     .image-wrapper {
-        width: 100%;
+        width: 90%; /* Pildid võtavad rohkem ruumi väiksematel ekraanidel */
         margin-bottom: 20px;
     }
 
@@ -174,6 +166,11 @@ body {
 
     .stripe {
         font-size: 1em;
+    }
+
+    .image-wrapper {
+        width: 100%; /* Pildid võtavad kogu ekraani laiuse väiksemates seadmetes */
+        height: auto;
     }
 }
 
