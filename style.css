@@ -170,11 +170,12 @@ body {
     }
 
     .title {
-        font-size: 7vw; /* Sama font-suurus nagu vertikaalvaates */
-        width: calc(100% - 20px); /* Katab kogu ekraani laiuse väikeste servadega */
+        font-size: 7vw;
+        width: calc(100% - 20px); /* Katab peaaegu kogu ekraani laiuse */
         margin-top: 10px;
         text-align: center;
         white-space: nowrap;
+        display: block; /* Teeme kindlaks, et kirje on nähtav */
     }
 
     .center-image-container {
@@ -203,6 +204,7 @@ body {
         display: block; /* Kuvab kõik pildid horisontaalvaates */
     }
 }
+
 
 
 
