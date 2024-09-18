@@ -12,8 +12,10 @@ body {
     justify-content: center;
     align-items: flex-start;
     height: 100vh;
+    flex-direction: column;
 }
 
+/* Konteiner */
 .container {
     text-align: center;
     width: 100%;
@@ -29,17 +31,20 @@ body {
 .title {
     font-size: 5.1em;
     font-weight: bold;
-    width: calc(50vh * 3);
+    margin-bottom: 20px;
     text-align: center;
     color: #333;
-    z-index: 10; /* Tagab kirje nähtavuse */
+    z-index: 1000; /* Kõrge z-index, et olla alati nähtav */
     position: relative;
+    width: 100%; /* Kogu ekraani laius */
+    background-color: white; /* Selgemaks eristamiseks */
+    padding: 10px 0;
 }
 
 /* Pildid arvutivaates */
 .center-image-container {
     position: relative;
-    width: calc(50vh * 3);
+    width: calc(50vh * 3); /* Sama laius nagu algses koodis */
     height: 50vh;
     display: flex;
     justify-content: space-between;
@@ -123,9 +128,7 @@ body {
     max-width: calc(100% / 4 - 10px);
 }
 
-/* --- Mobiilivaadete muudatused --- */
-
-/* Muutused ainult mobiili vertikaalvaates */
+/* Muutused mobiili vertikaalvaates */
 @media (max-width: 768px) and (orientation: portrait) {
     body {
         padding: 0;
@@ -139,20 +142,23 @@ body {
         margin-top: 10px;
         text-align: center;
         white-space: nowrap;
-        position: relative;
-        z-index: 10;
+        z-index: 1000;
+        position: fixed; /* Fikseeritud ülemisse serva */
+        top: 0;
+        left: 0;
+        background-color: white;
     }
 
     .center-image-container {
         display: block;
         width: 100%;
         height: auto;
+        margin-top: 70px; /* Et pildid ei kataks kirjet */
     }
 
     .image-wrapper {
         width: 100%;
         height: auto;
-        position: relative;
     }
 
     .small-image {
@@ -165,7 +171,7 @@ body {
     }
 }
 
-/* Muutused ainult mobiili horisontaalvaates */
+/* Muutused mobiili horisontaalvaates */
 @media (max-width: 768px) and (orientation: landscape) {
     body {
         padding: 0;
@@ -179,9 +185,11 @@ body {
         margin-top: 10px;
         text-align: center;
         white-space: nowrap;
-        display: block; /* Tagab, et kirje kuvatakse */
-        z-index: 100; /* Kirje on kõige ees */
-        position: relative;
+        z-index: 1000; /* Kõrge z-index, et olla alati ees */
+        position: fixed; /* Fikseeritud ülemisse serva */
+        top: 0;
+        left: 0;
+        background-color: white;
     }
 
     .center-image-container {
@@ -189,7 +197,7 @@ body {
         justify-content: space-between;
         width: calc(100% - 20px); /* Peaaegu kogu ekraani laius */
         height: auto;
-        position: relative;
+        margin-top: 70px; /* Tagab, et pildid ei kata kirjet */
     }
 
     .image-wrapper {
@@ -208,9 +216,10 @@ body {
     }
 
     .image-wrapper:not(:first-child) {
-        display: block; /* Kuvab kõik pildid horisontaalvaates */
+        display: block;
     }
 }
+
 
 
 
