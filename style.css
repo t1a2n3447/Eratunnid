@@ -7,12 +7,12 @@
 body {
     font-family: Arial, sans-serif;
     display: flex;
-    justify-content: flex-start; /* Asetame sisu ülaserva */
+    flex-direction: column;
     align-items: center;
-    flex-direction: column; /* Paneme elemendid vertikaalselt */
+    justify-content: flex-start; /* Asetame sisu ülaserva */
     height: 100vh;
-    background-color: #90EE90;
-    padding: 0; /* Eemaldame paddingu servadest */
+    background-color: #90EE90; /* Taustavärv */
+    padding: 0;
 }
 
 .container {
@@ -26,15 +26,14 @@ body {
 
 /* Kirje "MATEMAATIKA ERATUNNID" */
 .title {
-    font-size: 5vw; /* Kohandub ekraani laiusega, et alati ühele reale mahuks */
+    font-size: 6vw; /* Kohandub ekraani laiusega */
     font-weight: bold;
-    margin-bottom: 20px;
-    width: 90%; /* Vähendame laiust, et kirje ei läheks ekraanilt välja */
-    text-align: center; /* Joondame teksti keskelt */
+    width: 100%; /* Võtab kogu ekraani laiuse */
+    text-align: center;
     color: #333;
-    margin-top: 0; /* Kirje jääb ekraani ülaserva */
-    white-space: nowrap; /* Väldime teksti reamurduse */
-    padding: 10px 0; /* Lisame natuke paddingut, et teksti ümber oleks õhku */
+    margin-top: 10px; /* Väike vahe kirje ja ekraani ülaosa vahel */
+    white-space: nowrap; /* Väldib teksti reamurduse */
+    padding: 10px 0; /* Lisab natuke õhku kirje ümber */
 }
 
 .center-image-container {
@@ -88,10 +87,15 @@ body {
 
     .title {
         font-size: 7vw; /* Vähendame natuke suurust, et mahuks kindlalt ekraanile */
-        width: 90%; /* Tagame, et see võtab 90% ekraani laiust ja mahub ära */
+        width: 100%; /* Tagame, et see võtab 100% ekraani laiust */
         text-align: center; /* Joondame kirje keskelt */
         white-space: nowrap; /* Väldime teksti murrangut uuele reale */
         padding: 5px 0; /* Lisame väikese paddingu teksti ümber */
+    }
+
+    .center-image-container {
+        width: 100%;
+        margin-top: 20px;
     }
 
     .stripes {
