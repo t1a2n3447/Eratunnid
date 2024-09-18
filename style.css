@@ -45,7 +45,7 @@ body {
 }
 
 .image-wrapper {
-    position: absolute; /* Üksteise peal ainult vertikaalvaates */
+    position: absolute; /* Vertikaalvaates pildid üksteise peal */
     width: 100%;
     height: auto;
     top: 0;
@@ -85,13 +85,13 @@ body {
     .center-image-container {
         display: flex; /* Pildid kõrvuti horisontaalvaates */
         justify-content: space-between;
-        width: calc(100% - 20px); /* Veidi vahet ekraani servadega */
+        width: calc(100% - 20px); /* Väike vahe ekraani servadega */
         height: auto;
     }
 
     .image-wrapper {
-        position: relative; /* Võtab piltide kõrvuti paigutamiseks automaatse positsiooni */
-        width: calc(33.33% - 10px); /* Jagab kolmeks võrdseks osaks, arvestades vahedega */
+        position: relative; /* Kõrvuti paigutamine horisontaalvaates */
+        width: calc(33.33% - 10px); /* Jagab piltide laiuse võrdselt */
         height: auto;
         margin-right: 5px;
     }
@@ -102,6 +102,32 @@ body {
 
     .image-wrapper:not(:first-child) {
         display: block; /* Kuvab kõik pildid horisontaalvaates */
+    }
+
+    .small-image {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Arvuti vaade */
+@media (min-width: 769px) {
+    .center-image-container {
+        display: flex; /* Pildid kõrvuti arvutivaates */
+        justify-content: space-between;
+        width: calc(100% - 20px); /* Väike vahe ekraani servadega */
+        height: auto;
+    }
+
+    .image-wrapper {
+        position: relative; /* Kõrvuti paigutamine arvutivaates */
+        width: calc(33.33% - 10px); /* Jagab piltide laiuse võrdselt */
+        height: auto;
+        margin-right: 5px;
+    }
+
+    .image-wrapper:last-child {
+        margin-right: 0; /* Viimasel pildil ei ole vaja paremale vahet lisada */
     }
 
     .small-image {
