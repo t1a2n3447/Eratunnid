@@ -10,8 +10,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #90EE90;
-    padding: 40px;
+    background-color: #90EE90; /* Heleroheline taustavärv */
+    padding: 40px; /* Lisab ruumi keha ümber */
 }
 
 .container {
@@ -121,6 +121,8 @@ body {
     max-width: calc(100% / 4 - 10px);
 }
 
+/* --- Mobiilivaadete muudatused --- */
+
 /* Muutused ainult mobiili vertikaalvaates */
 @media (max-width: 768px) and (orientation: portrait) {
     body {
@@ -130,7 +132,7 @@ body {
     }
 
     .title {
-        font-size: 7vw; /* Väiksem fondi suurus mobiilivaates */
+        font-size: 7vw; /* Väiksem font mobiilivaates */
         width: calc(100% - 20px); /* Katab peaaegu kogu laiuse */
         margin-top: 10px; /* Lisame vahe ekraani ülaäärega */
         text-align: center;
@@ -194,5 +196,6 @@ body {
         display: block; /* Kuvame kõik pildid horisontaalvaates */
     }
 }
+
 
 
