@@ -32,6 +32,7 @@ body {
     width: calc(50vh * 3);
     text-align: center;
     color: #333;
+    z-index: 10; /* Kirje on kõige ees */
 }
 
 /* Pildid arvutivaates */
@@ -175,8 +176,9 @@ body {
         margin-top: 10px;
         text-align: center;
         white-space: nowrap;
-        display: block; /* Tagab kirje nähtavuse */
-        z-index: 10; /* Tagame, et kirje on alati peal */
+        display: block; /* Tagame, et kirje kuvatakse */
+        z-index: 10; /* Tagame, et kirje on kõige peal */
+        position: relative;
     }
 
     .center-image-container {
@@ -205,6 +207,7 @@ body {
         display: block; /* Kuvab kõik pildid horisontaalvaates */
     }
 }
+
 
 
 
