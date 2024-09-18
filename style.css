@@ -36,7 +36,7 @@ body {
 
 .center-image-container {
     position: relative; /* Konteiner, kus pilt ja hover-riba asuvad */
-    width: calc(50vh * 3); /* Sama laius nagu enne */
+    width: calc(50vh * 3); /* Sama laius nagu algses koodis */
     height: 50vh;
     display: flex; /* Kasutame flexi, et pildid saaksid olla kõrvuti */
     justify-content: space-between; /* Lisame piltide vahele vahe */
@@ -156,7 +156,7 @@ body {
     }
 
     .image-wrapper:not(:first-child) {
-        display: none;
+        display: none; /* Peidab kõik peale esimese pildi */
     }
 }
 
@@ -188,5 +188,6 @@ body {
         display: block; /* Kuvab kõik pildid horisontaalvaates */
     }
 }
+
 
 
