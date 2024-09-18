@@ -133,18 +133,18 @@ body {
     max-width: calc(100% / 4 - 10px); /* Jagab ribad võrdselt */
 }
 
-/* Muutused ainult mobiili ja väikeste ekraanide jaoks */
+/* Muutused ainult mobiilivaates */
 @media (max-width: 768px) {
     .center-image-container {
-        flex-direction: column; /* Pildid liiguvad ühe peale */
+        flex-direction: column; /* Pildid liiguvad vertikaalselt */
         height: auto;
     }
 
     .image-wrapper {
-        width: 100%;
+        width: 100%; /* Pildid võtavad kogu ekraani laiuse */
         height: auto;
         margin-right: 0;
-        margin-bottom: 20px; /* Lisab vahe piltide vahele mobiilivaates */
+        margin-bottom: 20px;
     }
 
     .small-image {
@@ -163,5 +163,6 @@ body {
         margin: 10px 0;
     }
 }
+
 
 
