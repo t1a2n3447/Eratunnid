@@ -136,26 +136,32 @@ body {
 /* Muutused ainult mobiilivaates */
 @media (max-width: 768px) {
     .center-image-container {
-        flex-direction: column; /* Pildid liiguvad vertikaalselt */
-        width: 100%; /* Pildid võtavad kogu ekraani laiuse mobiilivaates */
+        position: relative;
+        width: 100%;
         height: auto;
     }
 
     .image-wrapper {
-        width: 100%; /* Pildid võtavad kogu ekraani laiuse */
+        position: absolute; /* Asetab kõik pildid täpselt üksteise peale */
+        width: 100%;
         height: auto;
-        margin-right: 0;
-        margin-bottom: 20px;
+        top: 0;
+        left: 0;
     }
 
     .small-image {
-        max-width: 100%;
+        width: 100%; /* Pilt täidab kogu ekraani laiuse */
         height: auto;
+    }
+
+    .image-wrapper:nth-child(n+2) {
+        display: none; /* Peidab kõik peale esimese pildi */
     }
 
     .stripes {
         flex-direction: column;
         width: 100%;
+        margin-top: calc(100% + 20px); /* Lisab tühiku pildi ja ribade vahele */
     }
 
     .stripe {
@@ -164,6 +170,7 @@ body {
         margin: 10px 0;
     }
 }
+
 
 
 
