@@ -136,57 +136,60 @@ body {
 /* Muutused ainult mobiilivaates */
 @media (max-width: 768px) {
     .container {
-        width: 100%;
-        padding: 20px;
+        width: 100% !important;
+        padding: 20px !important;
     }
 
     .title {
-        font-size: 2.5em;
-        margin-bottom: 20px;
-        width: 100%; /* Teeb kirje laiuse ekraanile sobivaks */
-        text-align: center; /* Joondab kirje keskelt */
-        white-space: normal; /* Väldib teksti väljumist ekraanist */
+        font-size: 2.5em !important;
+        margin-bottom: 20px !important;
+        width: 100% !important;
+        text-align: center !important;
+        white-space: normal !important;
     }
 
     .center-image-container {
-        position: relative;
-        width: 100%; /* Pilt võtab kogu ekraani laiuse */
-        height: auto;
-        margin-right: 20px; /* Paremal sama vahe kui vasakul */
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
     }
 
     .image-wrapper {
-        position: absolute; /* Asetab kõik pildid täpselt üksteise peale */
-        width: 100%; /* Pilt täidab kogu ekraani laiuse */
-        height: auto;
-        top: 0;
-        left: 0;
+        position: absolute !important;
+        width: 100% !important;
+        height: auto !important;
+        top: 0 !important;
+        left: 0 !important;
     }
 
     .small-image {
-        width: 100%; /* Pildi suurus kohandub ekraani laiusega */
-        height: auto;
+        width: 100% !important;
+        height: auto !important;
     }
 
     .image-wrapper:not(:first-child) {
-        display: none; /* Peidab kõik peale esimese pildi */
+        display: none !important;
     }
 
     .stripes {
-        display: flex;
-        flex-direction: column;
-        width: calc(100% - 40px); /* Piltidega sama laius ja ruum vasakul-paremal */
-        margin-top: 20px; /* Lisab tühiku pildi ja ribade vahele */
+        display: flex !important;
+        flex-direction: column !important;
+        width: calc(100% - 40px) !important;
+        margin-top: 20px !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
     }
 
     .stripe {
-        font-size: 1.2em;
-        text-align: center; /* Joondab nupud keskele */
-        width: 100%;
-        margin: 10px 0;
-        padding: 10px 0;
-        background-color: rgba(255, 255, 255, 0.8); /* Nuppude läbipaistev taust */
-        border-radius: 5px; /* Nupud kergelt ümardatud */
+        font-size: 1.2em !important;
+        text-align: center !important;
+        width: 100% !important;
+        margin: 10px 0 !important;
+        padding: 10px 0 !important;
+        background-color: rgba(255, 255, 255, 0.8) !important;
+        border-radius: 5px !important;
     }
 }
 
