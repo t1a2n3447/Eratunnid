@@ -80,8 +80,8 @@ body {
     border-radius: 5px;
 }
 
-/* Muutused ainult horisontaalvaates ja suuremate ekraanide jaoks */
-@media (min-aspect-ratio: 4/3) {
+/* Muutused ainult telefoni horisontaalvaates */
+@media (max-width: 768px) and (orientation: landscape) {
     .center-image-container {
         display: flex; /* Pildid kõrvuti horisontaalvaates */
         justify-content: space-between;
