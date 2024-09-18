@@ -10,7 +10,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #90EE90; /* Heleroheline taustavärv */
+    background-color: #90EE90;
     padding: 40px;
 }
 
@@ -170,10 +170,11 @@ body {
     }
 
     .title {
-        font-size: 6vw;
-        width: calc(100% - 20px); /* Katab peaaegu kogu ekraani laiuse */
+        font-size: 7vw; /* Sama font-suurus nagu vertikaalvaates */
+        width: calc(100% - 20px); /* Katab kogu ekraani laiuse väikeste servadega */
         margin-top: 10px;
         text-align: center;
+        white-space: nowrap;
     }
 
     .center-image-container {
@@ -202,6 +203,7 @@ body {
         display: block; /* Kuvab kõik pildid horisontaalvaates */
     }
 }
+
 
 
 
