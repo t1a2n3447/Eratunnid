@@ -39,100 +39,81 @@ body {
 
 .center-image-container {
     position: relative;
-    width: 100%;
-    height: auto;
+    width: calc(50vh * 3); /* Tagame arvutivaates sama laius nagu alguses */
+    height: 50vh; /* Sama kõrgus nagu algses koodis */
     margin-top: 20px;
+    display: flex;
+    justify-content: space-between; /* Asetame pildid arvutivaates kõrvuti */
 }
 
 .image-wrapper {
-    position: absolute; /* Vertikaalvaates pildid üksteise peal */
-    width: 100%;
-    height: auto;
-    top: 0;
-    left: 0;
+    width: calc((50vh * 3) / 3 - 10px); /* Jagame pildid kolmeks võrdselt */
+    height: 100%;
+    margin-right: 5px; /* Väike vahe piltide vahel */
+}
+
+.image-wrapper:last-child {
+    margin-right: 0; /* Viimasel pildil ei ole vaja vahet paremal */
 }
 
 .small-image {
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 
-.image-wrapper:not(:first-child) {
-    display: none; /* Peidab kõik peale esimese pildi vertikaalvaates */
-}
-
-.stripes {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.stripe {
-    font-size: 1.2em;
-    text-align: center;
-    width: 100%;
-    max-width: 400px;
-    margin: 10px 0;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 5px;
-}
-
-/* Muutused ainult telefoni horisontaalvaates */
-@media (max-width: 768px) and (orientation: landscape) {
+/* Muutused ainult mobiili vertikaalvaates */
+@media (max-width: 768px) and (orientation: portrait) {
     .center-image-container {
-        display: flex; /* Pildid kõrvuti horisontaalvaates */
-        justify-content: space-between;
-        width: calc(100% - 20px); /* Väike vahe ekraani servadega */
+        position: relative;
+        display: block; /* Pildid üksteise peal vertikaalvaates */
+        width: 100%; /* Pildid võtavad kogu laiuse */
         height: auto;
     }
 
     .image-wrapper {
-        position: relative; /* Kõrvuti paigutamine horisontaalvaates */
-        width: calc(33.33% - 10px); /* Jagab piltide laiuse võrdselt */
+        position: absolute;
+        width: 100%;
+        height: auto;
+        top: 0;
+        left: 0;
+    }
+
+    .small-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .image-wrapper:not(:first-child) {
+        display: none; /* Peidab kõik peale esimese pildi */
+    }
+}
+
+/* Muutused ainult mobiili horisontaalvaates */
+@media (max-width: 768px) and (orientation: landscape) {
+    .center-image-container {
+        display: flex;
+        justify-content: space-between;
+        width: calc(100% - 20px); /* Jätame väikese vahe servadele */
+        height: auto;
+    }
+
+    .image-wrapper {
+        width: calc(33.33% - 10px); /* Jagame pildid võrdselt horisontaalvaates */
         height: auto;
         margin-right: 5px;
     }
 
     .image-wrapper:last-child {
-        margin-right: 0; /* Viimasel pildil ei ole vaja paremale vahet lisada */
+        margin-right: 0;
+    }
+
+    .small-image {
+        width: 100%;
+        height: auto;
     }
 
     .image-wrapper:not(:first-child) {
         display: block; /* Kuvab kõik pildid horisontaalvaates */
-    }
-
-    .small-image {
-        width: 100%;
-        height: auto;
-    }
-}
-
-/* Arvuti vaade */
-@media (min-width: 769px) {
-    .center-image-container {
-        display: flex; /* Pildid kõrvuti arvutivaates */
-        justify-content: space-between;
-        width: calc(100% - 20px); /* Väike vahe ekraani servadega */
-        height: auto;
-    }
-
-    .image-wrapper {
-        position: relative; /* Kõrvuti paigutamine arvutivaates */
-        width: calc(33.33% - 10px); /* Jagab piltide laiuse võrdselt */
-        height: auto;
-        margin-right: 5px;
-    }
-
-    .image-wrapper:last-child {
-        margin-right: 0; /* Viimasel pildil ei ole vaja paremale vahet lisada */
-    }
-
-    .small-image {
-        width: 100%;
-        height: auto;
     }
 }
 
