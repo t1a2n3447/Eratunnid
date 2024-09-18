@@ -175,7 +175,8 @@ body {
         margin-top: 10px;
         text-align: center;
         white-space: nowrap;
-        display: block; /* Teeme kindlaks, et kirje on nähtav */
+        display: block; /* Tagab kirje nähtavuse */
+        z-index: 10; /* Tagame, et kirje on alati peal */
     }
 
     .center-image-container {
@@ -204,6 +205,7 @@ body {
         display: block; /* Kuvab kõik pildid horisontaalvaates */
     }
 }
+
 
 
 
