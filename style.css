@@ -137,6 +137,7 @@ body {
 @media (max-width: 768px) {
     .center-image-container {
         flex-direction: column; /* Pildid liiguvad vertikaalselt */
+        width: 100%; /* Pildid võtavad kogu ekraani laiuse mobiilivaates */
         height: auto;
     }
 
@@ -163,6 +164,7 @@ body {
         margin: 10px 0;
     }
 }
+
 
 
 
