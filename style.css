@@ -26,14 +26,14 @@ body {
 
 /* Kirje "MATEMAATIKA ERATUNNID" */
 .title {
-    font-size: 6vw; /* Kohandub ekraani laiusega, et alati ühele reale mahuks */
+    font-size: 5vw; /* Kohandub ekraani laiusega, et alati ühele reale mahuks */
     font-weight: bold;
     margin-bottom: 20px;
-    width: 100%; /* Täis laiuses */
-    text-align: center;
+    width: 90%; /* Vähendame laiust, et kirje ei läheks ekraanilt välja */
+    text-align: center; /* Joondame teksti keskelt */
     color: #333;
-    margin-top: 0; /* Kirje jääb ülaserva */
-    white-space: nowrap; /* Väldib teksti reamurduse */
+    margin-top: 0; /* Kirje jääb ekraani ülaserva */
+    white-space: nowrap; /* Väldime teksti reamurduse */
     padding: 10px 0; /* Lisame natuke paddingut, et teksti ümber oleks õhku */
 }
 
@@ -87,7 +87,9 @@ body {
     }
 
     .title {
-        font-size: 8vw; /* Kohandame kirje suurust väiksematele ekraanidele */
+        font-size: 7vw; /* Vähendame natuke suurust, et mahuks kindlalt ekraanile */
+        width: 90%; /* Tagame, et see võtab 90% ekraani laiust ja mahub ära */
+        text-align: center; /* Joondame kirje keskelt */
         white-space: nowrap; /* Väldime teksti murrangut uuele reale */
         padding: 5px 0; /* Lisame väikese paddingu teksti ümber */
     }
@@ -96,7 +98,6 @@ body {
         width: calc(100% - 40px); /* Ribad võtavad peaaegu kogu ekraani laiuse */
     }
 }
-
 
 
 
