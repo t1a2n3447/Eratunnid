@@ -136,28 +136,30 @@ body {
 /* Media query mobiili vertikaalse vaate jaoks */
 @media (max-width: 768px) {
     .container, .center-image-container, .stripes {
-        display: none; /* Peidab muud elemendid */
+        display: none; /* Peidab kõik muud elemendid */
     }
-    
+
     .title {
-        display: block;
+        display: block; /* Teeb tiitli nähtavaks */
         font-size: 2em; /* Muuda fondi suurust vastavalt vajadusele */
         text-align: center;
         margin: 0 auto; /* Keskjoondamine horisontaalselt */
-        padding: 10px; /* Veidi ruumi ümber teksti */
+        padding: 10px; /* Lisab natuke ruumi teksti ümber */
         max-width: 90%; /* Väike vaba ruum külgedelt */
         color: #333; /* Teksti värv */
     }
 
     body {
-        padding: 0; /* Eemaldab kehast täidise mobiilivaates */
+        padding: 20px; /* Natuke ruumi ümber keha */
         display: flex;
         flex-direction: column;
         justify-content: flex-start; /* Paigutab elemendi ülaserva */
-        align-items: center; /* Kesktasandab horisontaalselt */
+        align-items: center; /* Keskjoondab horisontaalselt */
         height: 100vh;
+        background-color: #90EE90; /* Taustavärv jääb samaks */
     }
 }
+
 
 
 
