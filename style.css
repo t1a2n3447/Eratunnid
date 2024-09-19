@@ -133,6 +133,13 @@ body {
     max-width: calc(100% / 4 - 10px); /* Jagab ribad võrdselt */
 }
 
+/* Media query väiksemate ekraanide jaoks (mobiili vertikaalne ja horisontaalne vaade) */
+@media (max-width: 768px) {
+    .container, .title, .center-image-container, .stripes {
+        display: none; /* Peidab kogu sisu, jättes ainult helerohelise tausta */
+    }
+}
+
 
 
 
