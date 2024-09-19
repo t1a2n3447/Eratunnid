@@ -141,24 +141,25 @@ body {
 
     .title {
         display: block; /* Teeb tiitli nähtavaks */
-        font-size: 2em; /* Muuda fondi suurust vastavalt vajadusele */
-        text-align: center;
+        font-size: 2em; /* Fondi suurus */
+        text-align: center; /* Keskjoondamine horisontaalselt */
         margin: 0 auto; /* Keskjoondamine horisontaalselt */
         padding: 10px; /* Lisab natuke ruumi teksti ümber */
-        max-width: 90%; /* Väike vaba ruum külgedelt */
+        width: 100%; /* Tiitel võtab kogu laiuse */
         color: #333; /* Teksti värv */
     }
 
     body {
-        padding: 20px; /* Natuke ruumi ümber keha */
+        padding: 0; /* Eemaldab täidise kehast */
+        background-color: #90EE90; /* Heleroheline taust */
         display: flex;
         flex-direction: column;
         justify-content: flex-start; /* Paigutab elemendi ülaserva */
         align-items: center; /* Keskjoondab horisontaalselt */
-        height: 100vh;
-        background-color: #90EE90; /* Taustavärv jääb samaks */
+        height: 100vh; /* Täidab kogu ekraani kõrguse */
     }
 }
+
 
 
 
