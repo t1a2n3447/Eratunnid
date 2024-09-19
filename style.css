@@ -130,6 +130,33 @@ body {
     }
 }
 
+/* Mobiili vertikaalvaade (max-width: 768px) */
+@media (max-width: 768px) {
+    body {
+        background-color: #90EE90; /* Taustavärv jääb samaks */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .title {
+        font-size: 2.5em; /* Kohanda vastavalt vajadusele */
+        text-align: center;
+        width: 90%; /* Katab 90% laiust */
+        margin: 10px auto; /* Lisab vertikaalselt ruumi */
+        padding: 10px;
+        color: #333; /* Teksti värv */
+        background-color: transparent; /* Tausta ei ole */
+    }
+
+    .container, .center-image-container, .stripes {
+        display: none; /* Peidab ülejäänud elemendid vertikaalses vaates */
+    }
+}
 
 
 
