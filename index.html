@@ -34,32 +34,33 @@
         </div>
     </div>
 
-    // Funktsioon, mis kuvab katva riba ja peidab kõik pildid
-function showOverlay(text) {
-    const overlay = document.getElementById('hover-overlay');
-    const images = document.querySelectorAll('.small-image'); // Valime kõik pildid
-    overlay.innerHTML = text; // Kasutab innerHTML-i, et <br> töötaks
-    overlay.style.display = 'flex'; // Kuvab riba pildi kohal
-    images.forEach(image => image.style.opacity = '0'); // Peidab kõik pildid
-}
+    <script>
+        // Funktsioon, mis kuvab katva riba ja peidab kõik pildid
+        function showOverlay(text) {
+            const overlay = document.getElementById('hover-overlay');
+            const images = document.querySelectorAll('.small-image'); // Valime kõik pildid
+            overlay.innerHTML = text; // Kasutab innerHTML-i, et <br> töötaks
+            overlay.style.display = 'flex'; // Kuvab riba pildi kohal
+            images.forEach(image => image.style.opacity = '0'); // Peidab kõik pildid
+        }
 
-// Funktsioon, mis peidab katva riba ja taastab kõik pildid
-function hideOverlay() {
-    const overlay = document.getElementById('hover-overlay');
-    const images = document.querySelectorAll('.small-image'); // Valime kõik pildid
-    overlay.style.display = 'none'; // Peidab riba pildi kohal
-    images.forEach(image => image.style.opacity = '1'); // Toob kõik pildid tagasi nähtavale
-}
+        // Funktsioon, mis peidab katva riba ja taastab kõik pildid
+        function hideOverlay() {
+            const overlay = document.getElementById('hover-overlay');
+            const images = document.querySelectorAll('.small-image'); // Valime kõik pildid
+            overlay.style.display = 'none'; // Peidab riba pildi kohal
+            images.forEach(image => image.style.opacity = '1'); // Toob kõik pildid tagasi nähtavale
+        }
 
-// Funktsioonid mullide kuvamiseks ja peitmiseks
-function showBubble(id) {
-    document.getElementById(id).style.display = 'block';
-}
+        // Funktsioonid mullide kuvamiseks ja peitmiseks
+        function showBubble(id) {
+            document.getElementById(id).style.display = 'block';
+        }
 
-function hideBubble(id) {
-    document.getElementById(id).style.display = 'none';
-}
-
+        function hideBubble(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+    </script>
 </body>
 </html>
 
