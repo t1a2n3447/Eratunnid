@@ -14,7 +14,7 @@ body {
     padding: 40px; /* Lisab ruumi keha ümber */
 }
 
-/* Arvuti vaate jaoks */
+/* Arvuti vaade */
 .container {
     text-align: center;
     max-width: 80%;
@@ -102,7 +102,7 @@ body {
     .title {
         font-size: 5vw; /* Proportsionaalne ekraani laiusega */
         width: 95vw; /* Katab 95% ekraani laiusest */
-        margin-top: 0; /* Minimaalne vahe ülaservast */
+        margin-top: 5px; /* Minimaalne vahe ekraani ülaservast */
         margin-left: auto;
         margin-right: auto;
         text-align: center; /* Horisontaalselt keskele joondatud */
@@ -152,6 +152,7 @@ body {
 @media (min-width: 769px) {
     /* Siin ei muudeta midagi, et arvutivaade jääks puutumatuks */
 }
+
 
 
 
