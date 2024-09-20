@@ -12,14 +12,15 @@ body {
     height: 100vh;
 }
 
+/* Arvuti vaade - jätame muutmata */
 .container {
     text-align: center;
+    max-width: 80%;
+    max-height: 80vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
 }
 
 /* Kirje "MATEMAATIKA ERATUNNID" arvutivaates */
@@ -27,12 +28,12 @@ body {
     font-size: 5.1em;
     font-weight: bold;
     margin-bottom: 20px;
-    width: calc(50vh * 3); /* Säilitab laia arvutivaate */
+    width: calc(50vh * 3); /* Arvutivaade jääb samaks */
     text-align: center;
     color: #333;
 }
 
-/* Pildi ja mullide paigutus (arvutivaade) */
+/* Piltide ja mullide paigutus arvutivaates */
 .center-image-container {
     position: relative;
     width: calc(50vh * 3);
@@ -58,7 +59,24 @@ body {
     height: 100%;
 }
 
-/* Ribade paigutus (arvutivaade) */
+.bubble {
+    display: none;
+    position: absolute;
+    bottom: 10px; /* Paigutame mulli pildi alla */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 1em;
+    z-index: 3;
+    opacity: 0.9;
+    white-space: nowrap;
+}
+
+/* Ribade paigutus arvutivaates */
 .stripes {
     display: flex;
     justify-content: space-between;
@@ -76,15 +94,15 @@ body {
     max-width: calc(100% / 4 - 10px);
 }
 
-/* Mobiilivaadete (nii vertikaal- kui horisontaalvaate) stiilid */
+/* Mobiilivaated (nii vertikaal- kui horisontaalvaates) */
 @media (max-width: 768px) {
     .title {
-        font-size: 5vw; /* Proportsionaalne ekraani laiusega */
+        font-size: 5vw; /* Kirje suurus kohandub ekraani laiusega */
         width: 90vw; /* Katab 90% ekraani laiusest */
-        margin-top: 5px; /* Väike vahe ekraani ülaservast */
-        text-align: center; /* Joondatud horisontaalselt keskele */
+        margin-top: 10px; /* Väike vahe ekraani ülaservast */
         margin-left: auto;
         margin-right: auto;
+        text-align: center; /* Horisontaalselt keskele joondatud */
     }
 
     .container {
@@ -126,7 +144,7 @@ body {
     }
 }
 
-/* Arvutivaade */
+/* Arvutivaade jääb muutumatuks */
 @media (min-width: 769px) {
     /* Siin ei muudeta midagi, et arvutivaade jääks puutumatuks */
 }
