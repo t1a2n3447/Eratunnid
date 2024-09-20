@@ -133,23 +133,21 @@ body {
     max-width: calc(100% / 4 - 10px); /* Jagab ribad võrdselt */
 }
 
-/* Üldised stiilid jäävad samaks */
+/* Mobiilivaadete (nii vertikaal- kui horisontaalvaate) stiilid */
+@media (max-width: 768px) {
+    .title {
+        font-size: 5vw; /* Proportsionaalne ekraani laiusega */
+        width: 90vw; /* Katab 90% ekraani laiusest */
+        margin: 0 auto 20px auto; /* Keskjoonduseks */
+        text-align: center;
+    }
 
-/* Meediapäring mobiilseadmete vertikaalvaate jaoks */
-@media (max-width: 768px) and (orientation: portrait) {
     .container {
         width: 100%;
         height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-    }
-
-    .title {
-        font-size: 2.5em;
-        width: 100%;
-        margin-bottom: 20px;
-        text-align: center;
     }
 
     .center-image-container {
@@ -187,23 +185,8 @@ body {
     }
 }
 
-/* Meediapäring mobiilseadmete horisontaalvaate jaoks */
+/* Horisontaalvaade mobiilidele */
 @media (max-width: 768px) and (orientation: landscape) {
-    .container {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-    }
-
-    .title {
-        font-size: 2.5em;
-        width: 100%;
-        margin-bottom: 20px;
-        text-align: center;
-    }
-
     .center-image-container {
         flex-direction: row;
         width: 100%;
@@ -222,11 +205,6 @@ body {
         margin-right: 0;
     }
 
-    .small-image {
-        width: 100%;
-        height: auto;
-    }
-
     .stripes {
         flex-direction: row;
         width: 100%;
@@ -236,10 +214,6 @@ body {
     .stripe {
         width: calc(100% / 4 - 10px);
         margin: 0;
-    }
-
-    .hover-overlay {
-        display: none; /* Hover-riba mobiilseadmetes ei ole vajalik */
     }
 }
 
