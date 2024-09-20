@@ -6,220 +6,60 @@
 
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     background-color: #90EE90; /* Heleroheline taustavärv */
-    padding: 40px; /* Lisab ruumi keha ümber */
+    margin: 0;
+    padding: 0;
+    height: 100vh;
 }
 
 .container {
     text-align: center;
-    max-width: 80%;
-    max-height: 80vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
 /* Kirje "MATEMAATIKA ERATUNNID" */
 .title {
-    font-size: 5.1em;
-    font-weight: bold;
-    margin-bottom: 20px;
-    width: calc(50vh * 3);
+    font-size: 5vw; /* Suurus, mis kohandub ekraani laiusega */
+    width: 90vw; /* Katab 90% ekraani laiusest */
     text-align: center;
+    margin: 5px auto 0; /* Keskjoonduseks ja väga väike vahe ekraani ülaservast */
+    padding: 0;
     color: #333;
 }
 
-.center-image-container {
-    position: relative; /* Konteiner, kus pilt ja hover-riba asuvad */
-    width: calc(50vh * 3); /* Sama laius nagu enne */
-    height: 50vh;
-    display: flex; /* Kasutame flexi, et pildid saaksid olla kõrvuti */
-    justify-content: space-between; /* Lisame piltide vahele vahe */
-    margin-bottom: 40px; /* Säilitab vahe pildi ja ribade vahel */
-}
-
-.image-wrapper {
-    position: relative;
-    width: calc((50vh * 3) / 3 - 10px); /* Piltide laius, mis on jagatud kolme peale */
-    height: 50vh; /* Kõrgus jääb samaks */
-    margin-right: 5px; /* Lisame iga pildi vahele väikese vahe */
-}
-
-.image-wrapper:last-child {
-    margin-right: 0; /* Viimasel pildil ei ole vaja paremale vahet lisada */
-}
-
-.small-image {
-    width: 100%;
-    height: 100%;
-}
-
-.center-image {
-    transition: opacity 0.3s ease; /* Sujuv üleminek pildi peitmisel ja kuvamisel */
-}
-
-/* Hover-riba, mis katab kogu pildi */
-.hover-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.8); /* Sama taust kui ribadel */
-    background-image: 
-        linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
-        linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
-    background-size: 20px 20px;
-    display: none; /* Alguses ei kuvata */
-    justify-content: center;
-    align-items: center;
-    font-size: 2em;
-    color: #333;
-    text-align: justify; /* Tekst joondatakse justify abil */
-    padding-left: 20px; /* Lisab vasakule servale täidise */
-    padding-right: 20px; /* Lisab paremale servale sama täidise */
-    white-space: pre-wrap; /* Reavahetused toimivad */
-    line-height: 1.5; /* Reguleerib ridade vahekaugust */
-    text-indent: 0; /* Väldib teksti taandamist */
-    z-index: 2; /* Tagab, et riba on pildi kohal */
-}
-
-/* Mullide stiil */
-.bubble {
-    display: none; /* Mull ei ole alguses nähtav */
-    position: absolute;
-    bottom: 10px; /* Asetame mulli pildi alumisse serva */
-    left: 50%;
-    transform: translateX(-50%); /* Kesktasandame mulli pildi suhtes */
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    border-radius: 50px; /* Ovaalne kuju */
-    text-align: center;
-    font-size: 1em;
-    z-index: 3;
-    opacity: 0.9;
-    white-space: nowrap; /* Takistab rea murdumist */
-}
-
-/* Ribad pildi all */
-.stripes {
-    display: flex;
-    justify-content: space-between;
-    width: calc(50vh * 3);
-}
-
-.stripe {
-    flex: 1;
-    padding: 10px 0;
-    text-align: center;
-    font-size: calc(0.8 * 50px);
-    background-color: rgba(255, 255, 255, 0.8); /* Õrn läbipaistev taust */
-    border-radius: 50px;
-    
-    background-image: 
-        linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
-        linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
-    background-size: 20px 20px;
-    
-    color: #333;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 0 5px;
-    max-width: calc(100% / 4 - 10px); /* Jagab ribad võrdselt */
-}
-
-/* Mobiilivaadete (nii vertikaal- kui horisontaalvaate) stiilid */
+/* Mobiili vertikaal- ja horisontaalvaadete meediapäring */
 @media (max-width: 768px) {
+    .container {
+        justify-content: flex-start; /* Paigutus algab ekraani ülaservast */
+    }
+
     .title {
-        font-size: 5vw; /* Proportsionaalne ekraani laiusega */
+        font-size: 5vw; /* Suurus proportsionaalselt ekraani laiusega */
         width: 90vw; /* Katab 90% ekraani laiusest */
-        margin: 10px auto; /* Keskjoonduseks ja peaaegu ekraani ülaservas */
+        margin: 5px auto 0; /* Väike vahe ülaservast ja joondatud keskele */
+    }
+}
+
+/* Arvutivaade */
+@media (min-width: 769px) {
+    .title {
+        font-size: 5.1em; /* Suurem fonti suurus arvutivaate jaoks */
+        width: calc(50vh * 3);
         text-align: center;
+        margin-bottom: 20px;
     }
 
     .container {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-    }
-
-    .center-image-container {
-        flex-direction: column;
-        width: 100%;
-        height: auto;
+        max-width: 80%;
+        max-height: 80vh;
         justify-content: center;
-        margin-bottom: 20px;
-    }
-
-    .image-wrapper {
-        width: 100%;
-        height: auto;
-        margin-bottom: 10px;
-    }
-
-    .small-image {
-        width: 100%;
-        height: auto;
-    }
-
-    .stripes {
-        flex-direction: column;
-        width: 100%;
         align-items: center;
     }
-
-    .stripe {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    .hover-overlay {
-        display: none; /* Hover-riba mobiilseadmetes ei ole vajalik */
-    }
-}
-
-/* Horisontaalvaade mobiilidele */
-@media (max-width: 768px) and (orientation: landscape) {
-    .center-image-container {
-        flex-direction: row;
-        width: 100%;
-        height: auto;
-        justify-content: space-between;
-        margin-bottom: 20px;
-    }
-
-    .image-wrapper {
-        width: calc(100% / 3 - 10px);
-        height: auto;
-        margin-right: 5px;
-    }
-
-    .image-wrapper:last-child {
-        margin-right: 0;
-    }
-
-    .stripes {
-        flex-direction: row;
-        width: 100%;
-        justify-content: space-between;
-    }
-
-    .stripe {
-        width: calc(100% / 4 - 10px);
-        margin: 0;
-    }
-}
-
-/* Säilitame arvutivaate */
-@media (min-width: 769px) {
-    /* Kõik olemasolevad stiilid jäävad arvutivaate jaoks samaks */
 }
 
 
