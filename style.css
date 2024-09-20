@@ -102,7 +102,7 @@ body {
     .title {
         font-size: 5vw; /* Proportsionaalne ekraani laiusega */
         width: 95vw; /* Katab 95% ekraani laiusest */
-        margin-top: 10px; /* Veidi alla ekraani ülaservast */
+        margin-top: 0; /* Minimaalne vahe ülaservast */
         margin-left: auto;
         margin-right: auto;
         text-align: center; /* Horisontaalselt keskele joondatud */
