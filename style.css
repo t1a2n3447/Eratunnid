@@ -97,37 +97,11 @@ body {
     max-width: calc(100% / 4 - 10px);
 }
 
-/* Hover-riba, mis katab kogu pildi */
-.hover-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.8); /* Sama taust kui ribadel */
-    background-image: 
-        linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
-        linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
-    background-size: 20px 20px;
-    display: none; /* Alguses ei kuvata */
-    justify-content: center;
-    align-items: center;
-    font-size: 2em;
-    color: #333;
-    text-align: justify; /* Tekst joondatakse justify abil */
-    padding-left: 20px; /* Lisab vasakule servale täidise */
-    padding-right: 20px; /* Lisab paremale servale sama täidise */
-    white-space: pre-wrap; /* Reavahetused toimivad */
-    line-height: 1.5; /* Reguleerib ridade vahekaugust */
-    text-indent: 0; /* Väldib teksti taandamist */
-    z-index: 2; /* Tagab, et riba on pildi kohal */
-}
-
-/* Mobiilivaated (nii vertikaal- kui horisontaalvaate) */
+/* Mobiilivaadete (nii vertikaal- kui horisontaalvaate) stiilid */
 @media (max-width: 768px) {
     .title {
         font-size: 5vw; /* Proportsionaalne ekraani laiusega */
-        width: 90vw; /* Katab 90% ekraani laiusest */
+        width: 95vw; /* Katab 95% ekraani laiusest */
         margin-top: 10px; /* Veidi alla ekraani ülaservast */
         margin-left: auto;
         margin-right: auto;
