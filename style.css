@@ -1,16 +1,123 @@
-// Array piltide jaoks
-const images = ['pilt1.jpg', 'pilt2.jpg', 'pilt3.jpg'];
-let currentIndex = 0;
-
-// Funktsioon piltide vaheldumiseks
-function rotateImages() {
-    const imgElement = document.getElementById('image-rotation');
-    imgElement.src = images[currentIndex];
-    currentIndex = (currentIndex + 1) % images.length;
+/* Üldised stiilid */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-// Vaheta pilti iga 2 sekundi järel
-setInterval(rotateImages, 2000);
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #90EE90; /* Heleroheline taustavärv */
+    padding: 40px;
+}
+
+.container {
+    text-align: center;
+    max-width: 80%;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Pealkiri "MATEMAATIKA ERATUNNID" */
+.title {
+    font-size: 5.1em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    width: 95%;
+    text-align: center;
+    color: #333;
+}
+
+/* Piltide konteiner */
+.center-image-container {
+    position: relative;
+    width: 95%;
+    height: 300px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+/* Piltide stiilid */
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.center-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: slide 6s infinite; /* Üks tsükkel kestab 6 sekundit */
+}
+
+.center-image:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.center-image:nth-child(2) {
+    animation-delay: 2s;
+}
+
+.center-image:nth-child(3) {
+    animation-delay: 4s;
+}
+
+/* Ribade stiilid */
+.stripes {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    flex-direction: column;
+}
+
+.stripe {
+    padding: 15px;
+    text-align: center;
+    font-size: 1.2em;
+    background-color: rgba(255, 255, 255, 0.8); /* Õrn läbipaistev taust */
+    border-radius: 50px;
+    margin: 5px 0;
+    color: #333;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobiilivaate jaoks */
+@media (max-width: 768px) {
+    .stripes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stripe {
+        width: 95%;
+        margin: 10px 0;
+    }
+
+    .title {
+        font-size: 2.5em;
+    }
+}
+
+/* Piltide vaheldumise animatsioon */
+@keyframes slide {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    30% { opacity: 1; }
+    40% { opacity: 0; }
+    100% { opacity: 0; }
+}
 
 
 
