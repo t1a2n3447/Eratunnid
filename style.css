@@ -44,13 +44,6 @@ body {
     overflow: hidden;
 }
 
-/* Piltide stiilid */
-.image-wrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
 .center-image {
     position: absolute;
     top: 0;
@@ -58,20 +51,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0;
-    animation: slide 6s steps(1) 1; /* 6-sekundiline animatsioon, ainult üks kord */
-}
-
-.center-image:nth-child(1) {
-    animation-delay: 0s;
-}
-
-.center-image:nth-child(2) {
-    animation-delay: 2s;
-}
-
-.center-image:nth-child(3) {
-    animation-delay: 4s;
+    opacity: 1;
 }
 
 /* Ribade stiilid */
@@ -79,16 +59,16 @@ body {
     display: flex;
     justify-content: space-between;
     width: 95%;
-    flex-direction: column;
 }
 
 .stripe {
+    flex: 1;
     padding: 15px;
     text-align: center;
     font-size: 1.2em;
     background-color: rgba(255, 255, 255, 0.8); /* Õrn läbipaistev taust */
     border-radius: 50px;
-    margin: 5px 0;
+    margin: 5px;
     color: #333;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -96,29 +76,35 @@ body {
 /* Mobiilivaate jaoks */
 @media (max-width: 768px) {
     .center-image-container {
-        height: auto;
+        height: 300px; /* Mobiilivaates piltide kõrgus */
     }
 
-    .center-image {
-        position: static;
-        width: 100%;
-        height: auto;
-        animation: slide 6s steps(1) 1; /* Lõpetab pärast esimese tsükli */
+    /* Ainult vertikaalvaates */
+    @media (orientation: portrait) {
+        .center-image {
+            animation: slide 6s steps(1) 1; /* Lõpetab animatsiooni pärast ühte tsüklit */
+            opacity: 0;
+        }
+
+        .center-image:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .center-image:nth-child(2) {
+            animation-delay: 2s;
+        }
+
+        .center-image:nth-child(3) {
+            animation-delay: 4s;
+        }
+
+        /* Kui esimene pilt jääb püsima */
+        .center-image:nth-child(1) {
+            animation-fill-mode: forwards;
+        }
     }
 
-    .stripes {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .stripe {
-        width: 95%;
-        margin: 10px 0;
-    }
-
-    .title {
-        font-size: 2.5em;
-    }
+    /* Horisontaalvaates pole muudatusi */
 }
 
 /* Piltide vaheldumise animatsioon */
@@ -131,7 +117,6 @@ body {
     83.3% { opacity: 0; }
     100% { opacity: 1; }
 }
-
 
 
 
