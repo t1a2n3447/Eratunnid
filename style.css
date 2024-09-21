@@ -59,7 +59,7 @@ body {
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    animation: slide 6s infinite; /* Üks tsükkel kestab 6 sekundit */
+    animation: slide 6s steps(1) 1; /* 6-sekundiline animatsioon, ainult üks kord */
 }
 
 .center-image:nth-child(1) {
@@ -95,6 +95,17 @@ body {
 
 /* Mobiilivaate jaoks */
 @media (max-width: 768px) {
+    .center-image-container {
+        height: auto;
+    }
+
+    .center-image {
+        position: static;
+        width: 100%;
+        height: auto;
+        animation: slide 6s steps(1) 1; /* Lõpetab pärast esimese tsükli */
+    }
+
     .stripes {
         flex-direction: column;
         align-items: center;
@@ -113,12 +124,13 @@ body {
 /* Piltide vaheldumise animatsioon */
 @keyframes slide {
     0% { opacity: 0; }
-    10% { opacity: 1; }
-    30% { opacity: 1; }
-    40% { opacity: 0; }
-    100% { opacity: 0; }
+    16.6% { opacity: 1; }
+    33.3% { opacity: 0; }
+    50% { opacity: 0; }
+    66.6% { opacity: 1; }
+    83.3% { opacity: 0; }
+    100% { opacity: 1; }
 }
-
 
 
 
