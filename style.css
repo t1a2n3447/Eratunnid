@@ -1,4 +1,3 @@
-/* Üldised stiilid */
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +11,7 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #90EE90; /* Heleroheline taustavärv */
-    padding: 40px;
+    padding: 40px; /* Lisab ruumi keha ümber */
 }
 
 .container {
@@ -25,7 +24,7 @@ body {
     align-items: center;
 }
 
-/* Pealkiri "MATEMAATIKA ERATUNNID" */
+/* Kirje "MATEMAATIKA ERATUNNID" */
 .title {
     font-size: 5.1em;
     font-weight: bold;
@@ -35,25 +34,24 @@ body {
     color: #333;
 }
 
-/* Keskse pildikonteineri stiil */
 .center-image-container {
-    position: relative;
-    width: calc(50vh * 3);
+    position: relative; /* Konteiner, kus pilt ja hover-riba asuvad */
+    width: calc(50vh * 3); /* Sama laius nagu enne */
     height: 50vh;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 40px;
+    display: flex; /* Kasutame flexi, et pildid saaksid olla kõrvuti */
+    justify-content: space-between; /* Lisame piltide vahele vahe */
+    margin-bottom: 40px; /* Säilitab vahe pildi ja ribade vahel */
 }
 
 .image-wrapper {
     position: relative;
-    width: calc((50vh * 3) / 3 - 10px);
-    height: 50vh;
-    margin-right: 5px;
+    width: calc((50vh * 3) / 3 - 10px); /* Piltide laius, mis on jagatud kolme peale */
+    height: 50vh; /* Kõrgus jääb samaks */
+    margin-right: 5px; /* Lisame iga pildi vahele väikese vahe */
 }
 
 .image-wrapper:last-child {
-    margin-right: 0;
+    margin-right: 0; /* Viimasel pildil ei ole vaja paremale vahet lisada */
 }
 
 .small-image {
@@ -62,25 +60,54 @@ body {
 }
 
 .center-image {
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease; /* Sujuv üleminek pildi peitmisel ja kuvamisel */
 }
 
-/* Hover-riba pildi kohal */
+/* Hover-riba, mis katab kogu pildi */
 .hover-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.8);
-    display: none;
+    background-color: rgba(255, 255, 255, 0.8); /* Sama taust kui ribadel */
+    background-image: 
+        linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+        linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    display: none; /* Alguses ei kuvata */
     justify-content: center;
     align-items: center;
     font-size: 2em;
     color: #333;
+    text-align: justify; /* Tekst joondatakse justify abil */
+    padding-left: 20px; /* Lisab vasakule servale täidise */
+    padding-right: 20px; /* Lisab paremale servale sama täidise */
+    white-space: pre-wrap; /* Reavahetused toimivad */
+    line-height: 1.5; /* Reguleerib ridade vahekaugust */
+    text-indent: 0; /* Väldib teksti taandamist */
+    z-index: 2; /* Tagab, et riba on pildi kohal */
 }
 
-/* Ribad */
+/* Mullide stiil */
+.bubble {
+    display: none; /* Mull ei ole alguses nähtav */
+    position: absolute;
+    bottom: 10px; /* Asetame mulli pildi alumisse serva */
+    left: 50%;
+    transform: translateX(-50%); /* Kesktasandame mulli pildi suhtes */
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 50px; /* Ovaalne kuju */
+    text-align: center;
+    font-size: 1em;
+    z-index: 3;
+    opacity: 0.9;
+    white-space: nowrap; /* Takistab rea murdumist */
+}
+
+/* Ribad pildi all */
 .stripes {
     display: flex;
     justify-content: space-between;
@@ -91,71 +118,20 @@ body {
     flex: 1;
     padding: 10px 0;
     text-align: center;
-    font-size: 1.2em;
-    background-color: rgba(255, 255, 255, 0.8);
+    font-size: calc(0.8 * 50px);
+    background-color: rgba(255, 255, 255, 0.8); /* Õrn läbipaistev taust */
     border-radius: 50px;
+    
+    background-image: 
+        linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+        linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    
+    color: #333;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     margin: 0 5px;
+    max-width: calc(100% / 4 - 10px); /* Jagab ribad võrdselt */
 }
-
-/* Ainult mobiili vertikaalvaate jaoks */
-@media (max-width: 768px) and (orientation: portrait) {
-    .center-image-container {
-        height: auto;
-        display: block;
-    }
-
-    .center-image {
-        width: 100%;
-        height: auto;
-        position: static;
-        opacity: 0;
-        animation: slide 6s steps(1) 1; /* Lõpetab pärast ühte tsüklit */
-    }
-
-    .center-image:nth-child(1) {
-        animation-delay: 0s;
-    }
-
-    .center-image:nth-child(2) {
-        animation-delay: 2s;
-    }
-
-    .center-image:nth-child(3) {
-        animation-delay: 4s;
-    }
-
-    .center-image:nth-child(1) {
-        animation-fill-mode: forwards;
-    }
-
-    .stripes {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .stripe {
-        width: 95%;
-        margin: 10px 0;
-    }
-
-    .title {
-        font-size: 2.5em;
-    }
-}
-
-/* Piltide vaheldumise animatsioon */
-@keyframes slide {
-    0% { opacity: 0; }
-    16.6% { opacity: 1; }
-    33.3% { opacity: 0; }
-    50% { opacity: 0; }
-    66.6% { opacity: 1; }
-    83.3% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-
-
 
 
 
