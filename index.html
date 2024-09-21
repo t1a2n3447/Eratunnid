@@ -36,17 +36,13 @@
         // Hover overlay funktsioon
         function showOverlay(text) {
             const overlay = document.getElementById('hover-overlay');
-            const images = document.querySelectorAll('.small-image');
             overlay.innerHTML = text;
             overlay.style.display = 'flex';
-            images.forEach(image => image.style.opacity = '0'); // Peida kõik pildid
         }
 
         function hideOverlay() {
             const overlay = document.getElementById('hover-overlay');
-            const images = document.querySelectorAll('.small-image');
             overlay.style.display = 'none';
-            images.forEach(image => image.style.opacity = '1'); // Taasta kõik pildid
         }
 
         // Mullide kuvamine ja peitmine
