@@ -1,3 +1,4 @@
+/* Põhistiilid */
 * {
     margin: 0;
     padding: 0;
@@ -151,12 +152,12 @@ body {
 
     .stripes {
         width: 95vw;
-        flex-direction: column;
+        flex-direction: row; /* Ribad kõrvuti horisontaalvaates */
     }
 
     .stripe {
-        width: 95vw;
-        margin-bottom: 10px;
+        flex: 1;
+        margin: 0 5px;
         font-size: 1.5em;
     }
 }
@@ -182,16 +183,15 @@ body {
 
     .stripes {
         width: 95vw;
-        flex-direction: row;
+        flex-direction: column; /* Ribad üksteise all vertikaalvaates */
     }
 
     .stripe {
-        flex: 1;
-        margin: 0 5px;
+        width: 95vw;
+        margin-bottom: 10px;
         font-size: 1.5em;
     }
 }
-
 
 
 
