@@ -30,28 +30,34 @@ body {
     font-size: 5.1em;
     font-weight: bold;
     margin-bottom: 20px;
-    width: 95vw; /* Pealkirja laius 95% ekraanist */
+    width: calc(50vh * 3);
     text-align: center;
     color: #333;
 }
 
 .center-image-container {
-    position: relative;
-    width: 95vw; /* Piltide laius sama mis pealkiri */
+    position: relative; 
+    width: calc(50vh * 3); 
+    height: 50vh;
     display: flex;
-    flex-direction: column;
-    margin-bottom: 40px;
+    justify-content: space-between; 
+    margin-bottom: 40px; 
 }
 
 .image-wrapper {
-    width: 100%; /* Pilt täidab 100% oma konteinerist */
-    height: auto; /* Pilt kohandub kõrguse osas */
-    margin-bottom: 10px;
+    position: relative;
+    width: calc((50vh * 3) / 3 - 10px);
+    height: 50vh; 
+    margin-right: 5px; 
+}
+
+.image-wrapper:last-child {
+    margin-right: 0;
 }
 
 .small-image {
     width: 100%;
-    height: auto; /* Pilt skaleeritakse automaatselt */
+    height: 100%;
 }
 
 .center-image {
@@ -65,13 +71,18 @@ body {
     width: 100%;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.8);
-    display: none;
+    background-image: 
+        linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+        linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    display: none; 
     justify-content: center;
     align-items: center;
     font-size: 2em;
     color: #333;
     text-align: justify;
-    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
     white-space: pre-wrap;
     line-height: 1.5;
     z-index: 2;
@@ -98,27 +109,59 @@ body {
 /* Ribad pildi all */
 .stripes {
     display: flex;
-    flex-direction: column; /* Ribad üksteise all */
-    width: 95vw; /* Sama laius kui pilt */
-    align-items: center;
+    justify-content: space-between;
+    width: calc(50vh * 3);
 }
 
 .stripe {
-    width: 100%; /* Riba sama lai kui konteiner */
-    padding: 15px 0;
+    flex: 1;
+    padding: 10px 0;
     text-align: center;
-    font-size: 4vw; /* Teksti suurus sõltub ekraani laiusest */
+    font-size: calc(0.8 * 50px);
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 50px;
-    margin-bottom: 10px;
+    background-image: 
+        linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px), /* Taastame ruudulise tausta */
+        linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
     color: #333;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    white-space: nowrap; /* Takistab rea murdumist */
-    overflow: hidden; /* Väldib teksti ületäitmist */
-    text-overflow: ellipsis; /* Lisab kolmikpunktid kui tekst ei mahu ära */
+    margin: 0 5px;
+    max-width: calc(100% / 4 - 10px);
 }
 
 /* Mobile Styles */
+@media (max-width: 1024px) and (orientation: landscape) {
+    .title {
+        width: 95vw;
+        font-size: 4em;
+        margin-bottom: 10px;
+    }
+
+    .center-image-container {
+        width: 95vw;
+        height: auto;
+        flex-direction: column;
+    }
+
+    .image-wrapper {
+        width: 95vw;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .stripes {
+        width: 95vw;
+        flex-direction: row; /* Ribad kõrvuti horisontaalvaates */
+    }
+
+    .stripe {
+        flex: 1;
+        margin: 0 5px;
+        font-size: 1.5em;
+    }
+}
+
 @media (max-width: 768px) and (orientation: portrait) {
     .title {
         width: 95vw;
@@ -128,24 +171,34 @@ body {
 
     .center-image-container {
         width: 95vw;
+        height: auto;
+        flex-direction: column;
     }
 
     .image-wrapper {
-        width: 100%; /* Pilt täidab 100% konteineri */
+        width: 95vw;
+        height: auto;
         margin-bottom: 10px;
     }
 
     .small-image {
-        width: 100%; /* Pilt skaleeritakse 100% ulatuses */
+        width: 100%;
     }
 
     .stripes {
-        width: 95vw; /* Ribad sama laiad kui pilt ja pealkiri */
+        width: 95vw;
+        flex-direction: column; /* Ribad üksteise all vertikaalvaates */
+        align-items: center;
     }
 
     .stripe {
-        width: 100%; /* Ribad täidavad kogu ribakonteineri laiuse */
-        font-size: 4vw; /* Teksti suurus sõltub ekraani suurusest */
+        width: 100%; /* Ribad sama laiad kui pilt */
+        margin-bottom: 10px;
+        font-size: 4vw; /* Teksti suurus kohandub ekraani laiusega */
+        background-image: 
+            linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px), /* Taastame ruudulise tausta */
+            linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+        background-size: 20px 20px;
     }
 }
 
