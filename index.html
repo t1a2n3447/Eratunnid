@@ -11,25 +11,54 @@
         <div class="title">MATEMAATIKA ERATUNNID</div>
         <div class="center-image-container">
             <div class="image-wrapper">
-                <img src="pilt1.jpg" alt="Pilt 1" class="center-image small-image" id="pilt1">
+                <img src="pilt1.jpg" alt="Pilt 1" class="center-image small-image" id="pilt1" onmouseover="showBubble('bubble1')" onmouseout="hideBubble('bubble1')">
+                <div class="bubble" id="bubble1">Eraõpetaja Tanel Kuklane</div>
             </div>
             <div class="image-wrapper">
-                <img src="pilt2.jpg" alt="Pilt 2" class="center-image small-image" id="pilt2">
+                <img src="pilt2.jpg" alt="Pilt 2" class="center-image small-image" id="pilt2" onmouseover="showBubble('bubble2')" onmouseout="hideBubble('bubble2')">
+                <div class="bubble" id="bubble2">Siin hakkame õppima</div>
             </div>
             <div class="image-wrapper">
-                <img src="pilt3.jpg" alt="Pilt 3" class="center-image small-image" id="pilt3">
+                <img src="pilt3.jpg" alt="Pilt 3" class="center-image small-image" id="pilt3" onmouseover="showBubble('bubble3')" onmouseout="hideBubble('bubble3')">
+                <div class="bubble" id="bubble3">Ülesanne</div>
             </div>
         </div>
         <div class="stripes">
-            <div class="stripe">TUTVUSTUS</div>
-            <div class="stripe">HINNAKIRI</div>
-            <div class="stripe">KORRALDUS</div>
-            <div class="stripe">MAKSMINE</div>
+            <div class="stripe" onmouseover="showOverlay('Minu nimi on Tanel Kuklane ja olen kogenud matemaatika õpetaja.')" onmouseout="hideOverlay()">TUTVUSTUS</div>
+            <div class="stripe" onmouseover="showOverlay('Ühe akadeemilise tunni hind (45 min): 20 eurot<br>Kahe akadeemilise tunni hind (90 min): 30 eurot')" onmouseout="hideOverlay()">HINNAKIRI</div>
+            <div class="stripe" onmouseover="showOverlay('Tunnid toimuvad kesklinnas')" onmouseout="hideOverlay()">KORRALDUS</div>
+            <div class="stripe" onmouseover="showOverlay('Maksmise üksikasjad tulevad siia')" onmouseout="hideOverlay()">MAKSMINE</div>
         </div>
+        <div id="hover-overlay" class="hover-overlay"></div>
     </div>
 
     <script>
-        // Piltide roteerimine vertikaalses vaates
+        // Hover overlay funktsioon
+        function showOverlay(text) {
+            const overlay = document.getElementById('hover-overlay');
+            const images = document.querySelectorAll('.small-image');
+            overlay.innerHTML = text;
+            overlay.style.display = 'flex';
+            images.forEach(image => image.style.opacity = '0'); // Peida kõik pildid
+        }
+
+        function hideOverlay() {
+            const overlay = document.getElementById('hover-overlay');
+            const images = document.querySelectorAll('.small-image');
+            overlay.style.display = 'none';
+            images.forEach(image => image.style.opacity = '1'); // Taasta kõik pildid
+        }
+
+        // Mullide kuvamine ja peitmine
+        function showBubble(id) {
+            document.getElementById(id).style.display = 'block';
+        }
+
+        function hideBubble(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+
+        // Vertikaalne vaade: piltide roteerimine
         let currentImageIndex = 0;
         const images = document.querySelectorAll('.center-image');
         const imageRotationInterval = 2000; // 2 sekundit
@@ -43,18 +72,18 @@
         // Roteerimine ainult vertikaalses mobiilivaates
         if (window.innerWidth <= 600 && window.innerHeight > window.innerWidth) {
             setInterval(() => {
-                if (currentImageIndex === 0) clearInterval(showNextImage); // Peata pärast ühte tsüklit
                 showNextImage();
             }, imageRotationInterval);
         }
 
-        // Alguses näita ainult esimest pilti
-        images.forEach(image => image.style.display = 'none');
-        images[0].style.display = 'block';
+        // Alguses näita ainult esimest pilti vertikaalses vaates
+        if (window.innerWidth <= 600 && window.innerHeight > window.innerWidth) {
+            images.forEach(image => image.style.display = 'none');
+            images[0].style.display = 'block';
+        }
     </script>
 </body>
 </html>
-
 
 
 
