@@ -184,12 +184,16 @@ body {
     .stripes {
         width: 95vw;
         flex-direction: column; /* Ribad üksteise all vertikaalvaates */
+        align-items: center; /* Kesktasandame */
     }
 
     .stripe {
         width: 95vw; /* Ribad sama laiad kui pilt */
         margin-bottom: 10px;
-        font-size: 1.5em; /* Kohandatud font vastavalt ekraani mõõtmetele */
+        font-size: 4vw; /* Kohandatud font vastavalt ekraani suurusele */
+        white-space: nowrap; /* Tekst jääb ühele reale */
+        overflow: hidden; /* Tekst ei jookse üle serva */
+        text-overflow: ellipsis; /* Kui tekst ei mahu ära, lisatakse kolmikpunktid */
     }
 }
 
