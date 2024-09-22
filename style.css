@@ -6,8 +6,9 @@ body, html {
     background-color: #ccffcc; /* Heleroheline taust */
 }
 
-/* Kõigi seadmete jaoks kohaldatav teksti stiil */
+/* Teksti stiil - ühel real */
 .header {
+    white-space: nowrap; /* Väldib rea vahetust */
     text-align: center;
     position: absolute;
     top: 0;
@@ -16,29 +17,29 @@ body, html {
     font-weight: bold;
 }
 
-/* Arvuti vaade - teksti pikkus 80% ekraani laiusest */
+/* Arvuti vaade - kohandatud teksti suurus ja pikkus */
 @media (min-width: 1024px) {
     .header {
-        width: 80vw; /* 80% ekraani laiust */
-        font-size: 6vw; /* Teksti suurus arvutatakse vastavalt ekraani laiusele */
+        width: 80vw; /* 80% ekraani laiusest */
+        font-size: calc(80vw / 10); /* Teksti suurus põhineb ekraani laiusel, nii et see kataks peaaegu kogu ekraani serva */
         margin-top: 5vh; /* Minimaalne vahe ülevalt servast */
     }
 }
 
-/* Mobiili vertikaalne vaade - teksti pikkus 95% ekraani laiuse osast */
+/* Mobiili vertikaalne vaade - kohandatud teksti suurus ja pikkus */
 @media (max-width: 767px) and (orientation: portrait) {
     .header {
-        width: 95vw; /* 95% ekraani laiust */
-        font-size: 9vw; /* Teksti suurus vastavalt ekraani laiusele */
+        width: 95vw; /* 95% ekraani laiusest */
+        font-size: calc(95vw / 10); /* Teksti suurus põhineb ekraani laiusel */
         margin-top: 5vh; /* Minimaalne vahe ülevalt servast */
     }
 }
 
-/* Mobiili horisontaalne vaade - teksti pikkus 90% ekraani laiusest */
+/* Mobiili horisontaalne vaade - kohandatud teksti suurus ja pikkus */
 @media (max-width: 767px) and (orientation: landscape) {
     .header {
-        width: 90vw; /* 90% ekraani laiust */
-        font-size: 7vw; /* Teksti suurus vastavalt ekraani laiusele */
+        width: 90vw; /* 90% ekraani laiusest */
+        font-size: calc(90vw / 10); /* Teksti suurus põhineb ekraani laiusel */
         margin-top: 5vh; /* Minimaalne vahe ülevalt servast */
     }
 }
@@ -50,7 +51,6 @@ body, html {
     justify-content: center;
     align-items: center;
 }
-
 
 
 
