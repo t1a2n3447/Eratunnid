@@ -13,31 +13,33 @@ body, html {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 2em;
     font-weight: bold;
 }
 
-/* Arvuti vaade */
+/* Arvuti vaade - teksti pikkus 80% ekraani laiusest */
 @media (min-width: 1024px) {
     .header {
-        width: 80%;
-        margin-top: 20px; /* Minimaalne vahe ülevalt servast */
+        width: 80vw; /* 80% ekraani laiust */
+        font-size: 6vw; /* Teksti suurus arvutatakse vastavalt ekraani laiusele */
+        margin-top: 5vh; /* Minimaalne vahe ülevalt servast */
     }
 }
 
-/* Mobiili vertikaalne vaade */
+/* Mobiili vertikaalne vaade - teksti pikkus 95% ekraani laiuse osast */
 @media (max-width: 767px) and (orientation: portrait) {
     .header {
-        width: 95%;
-        margin-top: 10px; /* Minimaalne vahe ülevalt servast */
+        width: 95vw; /* 95% ekraani laiust */
+        font-size: 9vw; /* Teksti suurus vastavalt ekraani laiusele */
+        margin-top: 5vh; /* Minimaalne vahe ülevalt servast */
     }
 }
 
-/* Mobiili horisontaalne vaade */
+/* Mobiili horisontaalne vaade - teksti pikkus 90% ekraani laiusest */
 @media (max-width: 767px) and (orientation: landscape) {
     .header {
-        width: 80%;
-        margin-top: 10px; /* Minimaalne vahe ülevalt servast */
+        width: 90vw; /* 90% ekraani laiust */
+        font-size: 7vw; /* Teksti suurus vastavalt ekraani laiusele */
+        margin-top: 5vh; /* Minimaalne vahe ülevalt servast */
     }
 }
 
