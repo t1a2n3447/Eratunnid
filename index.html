@@ -7,12 +7,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="header">
-        MATEMAATIKA ERATUNNID
-    </div>
+    <div id="message" class="hidden">Test nr 1</div>
     <div class="content">
-        <!-- Siia saab hiljem sisu lisada -->
+        <!-- Sisu -->
     </div>
+
+    <script>
+        // Kuvab sõnumi 3 sekundiks
+        document.addEventListener('DOMContentLoaded', function() {
+            const message = document.getElementById('message');
+            message.classList.remove('hidden'); // Kuvab teate
+            setTimeout(() => {
+                message.classList.add('hidden'); // Peidab teate 3 sekundi pärast
+            }, 3000);
+        });
+    </script>
 </body>
 </html>
 
