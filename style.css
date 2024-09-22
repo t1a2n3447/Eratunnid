@@ -3,6 +3,7 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
+    overflow-x: hidden; /* Välistab horisontaalse kerimise */
     background-color: #ccffcc; /* Heleroheline taust */
 }
 
@@ -20,8 +21,8 @@ body, html {
 /* Arvuti vaade - kohandatud teksti suurus ja pikkus */
 @media (min-width: 1024px) {
     .header {
-        width: 80vw; /* 80% ekraani laiusest */
-        font-size: calc(80vw / 10); /* Teksti suurus põhineb ekraani laiusel, nii et see kataks peaaegu kogu ekraani serva */
+        width: 90vw; /* 90% ekraani laiusest */
+        font-size: calc(90vw / 10); /* Teksti suurus põhineb ekraani laiusel */
         margin-top: 5vh; /* Minimaalne vahe ülevalt servast */
     }
 }
@@ -29,8 +30,8 @@ body, html {
 /* Mobiili vertikaalne vaade - kohandatud teksti suurus ja pikkus */
 @media (max-width: 767px) and (orientation: portrait) {
     .header {
-        width: 95vw; /* 95% ekraani laiusest */
-        font-size: calc(95vw / 10); /* Teksti suurus põhineb ekraani laiusel */
+        width: 90vw; /* 90% ekraani laiusest */
+        font-size: calc(90vw / 12); /* Teksti suurus põhineb ekraani laiusel */
         margin-top: 5vh; /* Minimaalne vahe ülevalt servast */
     }
 }
