@@ -3,29 +3,26 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden; /* Välistab kerimise */
-    background-color: #ccffcc; /* Heleroheline taust */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    overflow-x: hidden; /* Välistab horisontaalse kerimise */
+    background-color: #ccffcc;
     box-sizing: border-box;
 }
 
-/* Teksti stiil - ühel real, sõltuvalt ekraani servast */
+/* Pealkiri */
 .header {
     white-space: nowrap; /* Väldib rea vahetust */
     text-align: center;
     font-weight: bold;
-    margin: 0;
-    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    width: 90vw; /* Katab 90% ekraani laiusest */
+    margin-top: 5vh; /* Minimaalne vahe ülevalt servast */
 }
 
 /* Arvuti vaade */
 @media (min-width: 1024px) {
     .header {
-        font-size: calc(90vw / 10); /* Teksti suurus vastavalt ekraani laiusest, katab 90% */
-        width: 90vw; /* 90% ekraani laiusest */
-        margin-top: 5vh;
+        font-size: calc(90vw / 10); /* Teksti suurus vastavalt ekraani laiusest */
     }
 }
 
@@ -33,17 +30,13 @@ body, html {
 @media (max-width: 767px) and (orientation: portrait) {
     .header {
         font-size: calc(90vw / 10); /* Teksti suurus vastavalt ekraani laiusest */
-        width: 90vw; /* 90% ekraani laiusest */
-        margin-top: 5vh;
     }
 }
 
 /* Mobiili horisontaalne vaade */
 @media (max-width: 767px) and (orientation: landscape) {
     .header {
-        font-size: calc(90vh / 10); /* Teksti suurus vastavalt ekraani kõrgusest, katab 90% */
-        width: 90vw; /* 90% ekraani laiusest */
-        margin-top: 5vh;
+        font-size: calc(90vw / 10); /* Teksti suurus vastavalt ekraani laiusest */
     }
 }
 
@@ -65,7 +58,6 @@ body, html {
 .hidden {
     display: none;
 }
-
 
 
 
