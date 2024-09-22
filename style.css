@@ -3,20 +3,22 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-color: #ccffcc;
+    overflow-x: hidden; /* Välistab horisontaalse kerimise */
+    background-color: #ccffcc; /* Heleroheline taust */
     box-sizing: border-box;
 }
 
-/* Lehe sisu stiil */
+/* Kirje stiil */
 .header {
+    white-space: nowrap; /* Väldib rea vahetust */
     text-align: center;
-    font-size: 2rem;
-    padding: 20px;
-}
-
-.content {
-    text-align: center;
-    padding: 20px;
+    position: relative;
+    font-weight: bold;
+    margin: 0 auto;
+    padding: 0 5vw; /* Ruumi mõlemale poole */
+    font-size: clamp(1.5rem, 7vw, 6rem); /* Kohandatav tekstisuurus, mis ei lähe ekraanilt välja */
+    margin-top: 5vh; /* Minimaalne vahe ülevalt servast */
+    width: 90vw; /* 90% ekraani laiusest */
 }
 
 /* Sõnumi stiil */
@@ -37,6 +39,7 @@ body, html {
 .hidden {
     display: none;
 }
+
 
 
 
