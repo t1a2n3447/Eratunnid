@@ -3,45 +3,45 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow-x: hidden; /* Välistab horisontaalse kerimise */
+    overflow-x: hidden; /* Väldib horisontaalset kerimist */
     background-color: #ccffcc; /* Heleroheline taust */
+    box-sizing: border-box; /* Tagab, et kõik mahuks korralikult ära */
 }
 
-/* Teksti stiil - ühel real */
+/* Teksti stiil - ühel real, mitte liiga suur */
 .header {
     white-space: nowrap; /* Väldib rea vahetust */
     text-align: center;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
     font-weight: bold;
+    margin: 0 auto;
+    padding: 0 5vw; /* Natuke ruumi servadele (5% ekraani laiust mõlemal pool) */
 }
 
-/* Arvuti vaade - kohandatud teksti suurus ja pikkus */
+/* Arvuti vaade */
 @media (min-width: 1024px) {
     .header {
-        width: 90vw; /* 90% ekraani laiusest */
-        font-size: calc(90vw / 10); /* Teksti suurus põhineb ekraani laiusel */
+        font-size: 5vw; /* Kohandatud teksti suurus, katab 90% ekraanist */
         margin-top: 5vh; /* Minimaalne vahe ülevalt servast */
+        width: 90vw; /* 90% ekraani laiusest */
     }
 }
 
-/* Mobiili vertikaalne vaade - kohandatud teksti suurus ja pikkus */
+/* Mobiili vertikaalne vaade */
 @media (max-width: 767px) and (orientation: portrait) {
     .header {
-        width: 90vw; /* 90% ekraani laiusest */
-        font-size: calc(90vw / 12); /* Teksti suurus põhineb ekraani laiusel */
+        font-size: 8vw; /* Kohandatud väiksemaks mobiiliekraanile */
         margin-top: 5vh; /* Minimaalne vahe ülevalt servast */
+        width: 90vw; /* 90% ekraani laiusest */
     }
 }
 
-/* Mobiili horisontaalne vaade - kohandatud teksti suurus ja pikkus */
+/* Mobiili horisontaalne vaade */
 @media (max-width: 767px) and (orientation: landscape) {
     .header {
-        width: 90vw; /* 90% ekraani laiusest */
-        font-size: calc(90vw / 10); /* Teksti suurus põhineb ekraani laiusel */
+        font-size: 7vw; /* Horisontaalses vaates kohandatud */
         margin-top: 5vh; /* Minimaalne vahe ülevalt servast */
+        width: 90vw; /* 90% ekraani laiusest */
     }
 }
 
@@ -52,7 +52,6 @@ body, html {
     justify-content: center;
     align-items: center;
 }
-
 
 
 
