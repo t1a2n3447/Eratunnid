@@ -3,7 +3,7 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow-x: hidden; /* Väldib horisontaalset kerimist */
+    overflow-x: hidden; /* Välistab horisontaalse kerimise */
     background-color: #ccffcc; /* Heleroheline taust */
     box-sizing: border-box; /* Tagab, et kõik mahuks korralikult ära */
 }
@@ -15,13 +15,13 @@ body, html {
     position: relative;
     font-weight: bold;
     margin: 0 auto;
-    padding: 0 5vw; /* Natuke ruumi servadele (5% ekraani laiust mõlemal pool) */
+    padding: 0 5vw; /* Lisab ruumi servadele mõlemalt poolt (5% ekraani laiusest) */
 }
 
 /* Arvuti vaade */
 @media (min-width: 1024px) {
     .header {
-        font-size: 5vw; /* Kohandatud teksti suurus, katab 90% ekraanist */
+        font-size: 5vw; /* Katab 90% ekraani laiusest */
         margin-top: 5vh; /* Minimaalne vahe ülevalt servast */
         width: 90vw; /* 90% ekraani laiusest */
     }
@@ -30,7 +30,7 @@ body, html {
 /* Mobiili vertikaalne vaade */
 @media (max-width: 767px) and (orientation: portrait) {
     .header {
-        font-size: 8vw; /* Kohandatud väiksemaks mobiiliekraanile */
+        font-size: 6.5vw; /* Kohandatud väiksemaks, et tekst ei läheks üle serva */
         margin-top: 5vh; /* Minimaalne vahe ülevalt servast */
         width: 90vw; /* 90% ekraani laiusest */
     }
@@ -39,7 +39,7 @@ body, html {
 /* Mobiili horisontaalne vaade */
 @media (max-width: 767px) and (orientation: landscape) {
     .header {
-        font-size: 7vw; /* Horisontaalses vaates kohandatud */
+        font-size: 5.5vw; /* Veelgi väiksem, et tekst mahuks horisontaalses vaates */
         margin-top: 5vh; /* Minimaalne vahe ülevalt servast */
         width: 90vw; /* 90% ekraani laiusest */
     }
@@ -52,6 +52,7 @@ body, html {
     justify-content: center;
     align-items: center;
 }
+
 
 
 
