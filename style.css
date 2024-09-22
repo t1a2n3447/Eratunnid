@@ -6,6 +6,42 @@ body, html {
     background-color: #ccffcc; /* Heleroheline taust */
 }
 
+/* Kõigi seadmete jaoks kohaldatav teksti stiil */
+.header {
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2em;
+    font-weight: bold;
+}
+
+/* Arvuti vaade */
+@media (min-width: 1024px) {
+    .header {
+        width: 80%;
+        margin-top: 20px; /* Minimaalne vahe ülevalt servast */
+    }
+}
+
+/* Mobiili vertikaalne vaade */
+@media (max-width: 767px) and (orientation: portrait) {
+    .header {
+        width: 95%;
+        margin-top: 10px; /* Minimaalne vahe ülevalt servast */
+    }
+}
+
+/* Mobiili horisontaalne vaade */
+@media (max-width: 767px) and (orientation: landscape) {
+    .header {
+        width: 80%;
+        margin-top: 10px; /* Minimaalne vahe ülevalt servast */
+    }
+}
+
+/* Üldine sisu paigutus */
 .content {
     height: 100%;
     display: flex;
@@ -13,7 +49,6 @@ body, html {
     align-items: center;
 }
 
-/* Siia saab hiljem lisada eraldi kujunduse arvuti, mobiili horisontaalse ja vertikaalse vaate jaoks */
 
 
 
