@@ -21,7 +21,7 @@ body, html {
 /* Arvuti vaade */
 @media (min-width: 1024px) {
     .header {
-        font-size: 5vw; /* Katab 90% ekraani laiusest */
+        font-size: clamp(2rem, 5vw, 6rem); /* Minimaalne suurus 2rem, kohandatav suurus 5vw, maksimaalne suurus 6rem */
         margin-top: 5vh; /* Minimaalne vahe ülevalt servast */
         width: 90vw; /* 90% ekraani laiusest */
     }
@@ -30,7 +30,7 @@ body, html {
 /* Mobiili vertikaalne vaade */
 @media (max-width: 767px) and (orientation: portrait) {
     .header {
-        font-size: 6.5vw; /* Kohandatud väiksemaks, et tekst ei läheks üle serva */
+        font-size: clamp(1.5rem, 8vw, 4rem); /* Minimaalne suurus 1.5rem, kohandatav suurus 8vw, maksimaalne suurus 4rem */
         margin-top: 5vh; /* Minimaalne vahe ülevalt servast */
         width: 90vw; /* 90% ekraani laiusest */
     }
@@ -39,7 +39,7 @@ body, html {
 /* Mobiili horisontaalne vaade */
 @media (max-width: 767px) and (orientation: landscape) {
     .header {
-        font-size: 5.5vw; /* Veelgi väiksem, et tekst mahuks horisontaalses vaates */
+        font-size: clamp(1.5rem, 7vw, 4rem); /* Minimaalne suurus 1.5rem, kohandatav suurus 7vw, maksimaalne suurus 4rem */
         margin-top: 5vh; /* Minimaalne vahe ülevalt servast */
         width: 90vw; /* 90% ekraani laiusest */
     }
@@ -52,7 +52,6 @@ body, html {
     justify-content: center;
     align-items: center;
 }
-
 
 
 
